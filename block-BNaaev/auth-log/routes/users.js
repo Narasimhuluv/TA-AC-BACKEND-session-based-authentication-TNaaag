@@ -12,6 +12,7 @@ router.post('/register', (req,res,next)=> {
   User.create(req.body, (err,user) => {
     console.log(err,user)
     // res.json(user)
+    res.redirect('/')
   })
 })
 
