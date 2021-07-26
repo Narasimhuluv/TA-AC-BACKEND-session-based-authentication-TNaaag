@@ -40,7 +40,7 @@ router.post('/login', (req,res,next) => {
       }
       console.log(err,result)
     })
-    req.session.userId = user.id;
+    // req.session.userId = user.id;
       res.redirect('/users/dashboard')
   })
   
