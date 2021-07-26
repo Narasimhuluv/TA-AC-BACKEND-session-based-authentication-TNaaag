@@ -10,6 +10,10 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+mongoose.connect('mongodb://localhost/auth-log', {useNewUrlParser : true , useUnifiedTopology : true}, (err) =>{
+  console.log(err ? err : "Connected to Server")
+})
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
