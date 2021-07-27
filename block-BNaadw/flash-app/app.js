@@ -33,7 +33,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // creating sessions
-
 app.use(session({
   secret : process.env.SECRET,
   resave : false,
