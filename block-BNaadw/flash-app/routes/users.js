@@ -32,6 +32,7 @@ router.post('/register', (req,res,next)=> {
   })
 })
 
+
 router.get('/login', (req,res,next) => {
   var error = req.flash('error')[0];
   console.log(error);
