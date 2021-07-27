@@ -18,7 +18,8 @@ router.post('/register', (req,res,next) => {
 
 router.get('/login', (req,res,next) => {
   var error = req.flash('error')[0]
-  res.render('login',{ error })
+  var success = req.flash('success')[1]
+  res.render('login',{ error , success})
   console.log(req.session)
 })
 
@@ -31,18 +32,21 @@ router.post('/login', (req,res,next )=> {
   let {email , password} = req.body;
   if(!email || !password) {
     req.flash('error', 'Email / Password is Required')
+    req.flash('success', 'Successful')
     return res.redirect('/users/login')
   }
   User.findOne({email}, (err,user) => {
     if(err) return next(err)
     if(!user){
       req.flash('error', 'Email is not registerd')
+      req.flash('success', 'Successful')
       return res.redirect('/users/login')
     }
     user.verifyPassword(password,(err,result) => {
       if(err) return next(err);
       if(!result){
         req.flash('error', 'try agian with correct details')
+        req.flash('success', 'Successful')
         return res.redirect('/users/login')
       }
       req.session.userId = user.id;
