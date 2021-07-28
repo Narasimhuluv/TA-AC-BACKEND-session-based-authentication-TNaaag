@@ -4,20 +4,21 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose')
+var bcrypt = require('bcrypt')
 var session = require('express-session')
-var MongoStore = require('connect-mongo')
+var Mongostore = require('connect-mongo')
 var flash = require('connect-flash')
+var slug = require('slug')
 
 require('dotenv').config();
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var articlesRouter = require('./routes/article')
 
-
-// connecting to database
-
-mongoose.connect('mongodb://localhost/flash', {useNewUrlParser : true , useUnifiedTopology : true}, (err) =>{
-  console.log(err ? err : "Connected to Server")
+// connected to Database
+mongoose.connect('mongodb://localhost/blog-app', {useNewUrlParser : true , useUnifiedTopology: true}, (err) => {
+  console.log(err ? err : "Connected to Database")
 })
 
 var app = express();
@@ -32,21 +33,20 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// creating sessions
+// creating session
 app.use(session({
   secret : process.env.SECRET,
   resave : false,
   saveUninitialized : false,
-  store : MongoStore.create({mongoUrl : 'mongodb://localhost/flash'})
+  store : Mongostore.create({mongoUrl : 'mongodb://localhost/blog-app'})
 }))
 
-// connecting flash 
+// connecting flash
 app.use(flash())
-
-// using routes
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/articles', articlesRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
