@@ -1,5 +1,5 @@
 {
-  "name": "auth-sign-log",
+  "name": "blog-app",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -19,6 +19,7 @@
     "http-errors": "~1.6.3",
     "mongoose": "^5.13.3",
     "morgan": "~1.9.1",
+    "slug": "^5.1.0",
     "tailwindcss": "^2.2.7"
   }
 }

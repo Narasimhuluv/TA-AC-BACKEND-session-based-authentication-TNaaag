@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <header class="border-2 shadow-sm p-8 text-xl flex justify-between">
+        <a class="border-2 bg-green-500 py-1 px-3 rounded-md text-white" href="/users/register">Register</a>
+        <a class="border-2 bg-green-500 py-1 px-3 rounded-md text-white" href="">Login</a>
+    </header>
+    
+
+    <main class="h-screen">
+        <section class="h-5/6 flex justify-center items-center">
+            <form action="/users/login" method="POST" class="w-4/12 border-2 p-10" >
+                <h2 class="text-xl font-bold">Login With Your Details</h2>
+                <%if(error){%>
+                    <p class="text-red-500"><%= error %> </p>
+                <% } %> 
+                <input class="w-full p-3 border-2 mt-4 rounded-md" type="email" name="email" placeholder="Enter Your email">
+                <input class="w-full p-3 border-2 mt-4 rounded-md" type="password" name="password" id="" placeholder="Enter your Password">
+                <input class="w-full p-3 border-2 mt-4 rounded-md" type="submit">
+            </form>
+        </section>
+    </main>
+</body>
+</html>
