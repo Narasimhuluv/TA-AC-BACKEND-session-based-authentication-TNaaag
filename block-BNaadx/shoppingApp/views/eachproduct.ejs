@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <header class="border-2 py-8 px-6">
+        <div class="flex justify-between items-center">
+          <a class="text-xl border-2 py-1 px-4 rounded-md bg-green-400 text-white" href="/admin/product">Back</a>
+          <a class="text-xl border-2 py-1 px-4 rounded-md bg-red-400 text-white" href="/users/logout">Logout</a>
+        </div>
+    </header>
+
+
+    <main class="w-full m-10">
+        <section class="w-full">
+            <div class="w-3/12 border-2 py-5 px-10 leading-10 shadow-md">
+
+                    <img class="w-full" src="<%=products.image  %> " alt="image tv">
+                    <h2 class="text-2xl text-green-700 font-bold"><%=products.name  %> </h2>
+                    <p class="text-xl font-bold text-blue-500">Price : <%=products.price  %> </p>
+                    <h3 class="text-red-500 font-bold">Quantitiy : <%= products.quantity   %> </h3>
+                    <p><% products.likes ? products.likes : 0 %> </p>
+
+
+                     <!-- edit and delete -->
+                     <a href="/admin/<%=products.id%>/edit">
+                        <button class="border-2  px-6 text-white font-bold rounded-lg bg-green-300">Edit</button>
+                    </a>
+
+                    <a href="/admin/<%=products.id%>/delete">
+                        <button class="border-2  px-6 text-white font-bold rounded-lg bg-red-500">Delete</button>
+                    </a>
+
+
+               
+            
+            </div>
+        </section>
+    </main>
+</body>
+</html>

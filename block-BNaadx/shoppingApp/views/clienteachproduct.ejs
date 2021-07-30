@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products</title>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <header class="border-2 py-8 px-6">
+        <div class="flex justify-between items-center">
+          <a class="text-xl border-2 py-1 px-4 rounded-md bg-green-400 text-white" href="/admin/product">Back</a>
+          <a class="text-xl border-2 py-1 px-4 rounded-md bg-red-400 text-white" href="/users/logout">Logout</a>
+        </div>
+    </header>
+
+
+    <main class="w-full m-10">
+        <section class="w-full">
+            <div class="w-3/12 border-2 py-5 px-10 leading-10 shadow-md">
+
+                    <img class="w-full" src="<%=products.image  %> " alt="image tv">
+                    <h2 class="text-2xl text-green-700 font-bold"><%=products.name  %> </h2>
+                    <p class="text-xl font-bold text-blue-500">Price : <%=products.price  %> </p>
+                    <h3 class="text-red-500 font-bold">Quantitiy : <%= products.quantity   %> </h3>
+                    <p class="text-green-700 text-xl"><%= products.likes ? products.likes : 0 %> </p>
+                    
+                    
+                    <div class="flex">
+                        <a class="w-1/12" href="/client/<%=products.id%>/likes">
+                            <img  class="border-2 mt-4" src="https://img-premium.flaticon.com/png/512/3055/premium/3055891.png?token=exp=1627626347~hmac=e94c69f985f9c266972312ab2ff391b9" alt="">
+                            <lottie-player class=" absolute bottom-0 left-0" src="https://assets10.lottiefiles.com/packages/lf20_d90jyV.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"   autoplay></lottie-player>
+                        </a>
+    
+                        <!-- <a class="w-1/12" href="/client/<%=products.id%>/dislikes">
+                            <img class=" mt-4 ml-4" src="https://img-premium.flaticon.com/png/512/2839/premium/2839235.png?token=exp=1627627532~hmac=db4fa067a89ae698cc119acb9d7c020d" alt="">
+                        </a> -->
+                    </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // var image = document.getElementById('image').addEventListener('click', (handlclick))
+        // function handlclick(){
+        //     var Image = document.querySelector('.ani_image');
+        //     Image.style.display = "block"
+            
+        // }
+    </script>
+</body>
+</html>
