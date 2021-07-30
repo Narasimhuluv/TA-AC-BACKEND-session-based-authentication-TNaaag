@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Home Page</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <header class="border-2 py-8 px-6">
+        <div class="flex justify-between items-center">
+          <a class="text-xl  text-blue-500" href="/">Admin</a>
+          <a class="text-xl border-2 py-1 px-4 rounded-md bg-red-400 text-white" href="/users/logout">Logout</a>
+        </div>
+    </header>
+
+    <main class="m-10">
+        <section>
+            <div>
+                <a href="/admin/product/new">
+                    <button class="border-2 py-1 px-4 bg-green-400 text-white rounded-md font-bold">Add Product</button>
+                </a>
+
+                <a href="/admin/product">
+                    <button class="border-2 py-1 px-4 bg-green-600 text-white rounded-md font-bold">All Products</button>
+                </a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product page</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <header class="border-2 py-8 px-6">
+        <div class="flex justify-between items-center">
+          <a class="text-xl border-2 py-1 px-4 rounded-md bg-green-400 text-white" href="/dashboard">Back</a>
+          <a class="text-xl border-2 py-1 px-4 rounded-md bg-red-400 text-white" href="/users/logout">Logout</a>
+        </div>
+    </header>
+
+
+    <main class="h-screen">
+        <section class="flex justify-center items-center h-4/6">
+            <form action="/admin/product" method="POST" class="w-4/12 border-2 p-8">
+                <h2 class="text-xl">Add Product</h2>
+                <input class="border-2 w-full mt-5 py-2 px-2 rounded-md focus:outline-none focus:border-green-400" type="text" name="image" placeholder="Enter your Image Url">
+                <input class="border-2 w-full mt-5 py-2 px-2 rounded-md focus:outline-none focus:border-green-400" type="text" name="name" placeholder="Enter your Product Name">
+                <input class="border-2 w-full mt-5 py-2 px-2 rounded-md focus:outline-none focus:border-green-400" type="number" name="quantity" placeholder="Enter Quantitiy ">
+                <input class="border-2 w-full mt-5 py-2 px-2 rounded-md focus:outline-none focus:border-green-400" type="number" name="price" placeholder="Enter the Price">
+                <!-- <input class="border-2 w-full mt-5 py-2 px-2 rounded-md focus:outline-none focus:border-green-400" type="text" name="likes" placeholder="Enter likes"> -->
+                <input class="border-2 w-full mt-5 py-2 px-2 rounded-md focus:outline-none focus:border-green-400" type="submit">
+            </form>
+        </section>
+    </main>
+</body>
+</html>
